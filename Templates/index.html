@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flack | Your Chat app</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="{{ url_for('static', filename='main.js') }}">
+    </script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div id="init">
+        <h2>Welcome to Flack! your chatapp to connect with the world.</h2>
+        <p>To get started, please enter the name you would like to use.</p>
+          <div class="row justify-content-center">
+            <form id="login">
+                <br>
+                <input id="user-name" autocomplete="off" autofocus placeholder="Enter user name" type="text">
+                <button type="submit" class="btn btn-primary">Enter</button>
+                <br>
+            </form>
+          </div>
+      </div>
+
+      <div id="main">
+        <div id="top" class="row">
+          <div class="col">
+            <h3> Flack </h3>
+            <p id="welcome"> Welcome <i id="display"></i> !</p>
+          </div>
+        </div>
+        <div class="col-8 text-center">
+            <div id="channel_list" style="text-align:center">
+              <p style="text-align:center">Channel Lists</p>
+              <ul id="channel_link">
+                {% for channel in channels %}
+                  <li data-channel="{{ channel }}" id="channel_name">{{ channel }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div id="input_block">
+              <form id="new_channel" style="margin-top:10px; text-align:center">
+                <input id="channels" autocomplete="off" autofocus placeholder="Create Channel" type="text"><br>
+                <button id="submit" type="submit" class="btn btn-primary" style="margin-top:10px;">Create</button>
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
