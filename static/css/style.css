@@ -7,7 +7,7 @@ p {
 #login {
   margin-top: 200px;
 }
-#display {
+#display, #name {
   font-weight: bold;
   font-family: sans-serif;
 }
@@ -39,4 +39,14 @@ h3 {
 }
 a {
   text-decoration: none;
+}
+#message_block {
+  border: 1px solid black;
+	padding: 10px;
+  height: 420px;
+  overflow-y: scroll;
+}
+#send_block {
+  margin-top: 10px;
+  width: 85%;
 }

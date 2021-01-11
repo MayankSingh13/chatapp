@@ -6,7 +6,7 @@ app.config["SECRET_KEY"] = 'sder345#@sfhrg'
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 #socketio = SocketIO(app)
 
-channels = ['General']
+channels = ['General', 'IT']
 
 @app.route("/")
 def index():
